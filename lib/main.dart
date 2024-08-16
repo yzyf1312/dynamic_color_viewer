@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             color: Theme.of(context).colorScheme.primary,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
+                Theme.of(context).colorScheme.primary.computeLuminance() > 0.5
                     ? Colors.black
                     : Colors.white,
             text: 'Color:primary',
@@ -64,34 +64,40 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             color: Theme.of(context).colorScheme.onPrimary,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.white
-                    : Colors.black,
+                Theme.of(context).colorScheme.onPrimary.computeLuminance() > 0.5
+                    ? Colors.black
+                    : Colors.white,
             text: 'Color:onPrimary',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.primaryContainer,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .primaryContainer
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:primaryContainer',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.onPrimaryContainer,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .onPrimaryContainer
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:onPrimaryContainer',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.secondary,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
+                Theme.of(context).colorScheme.secondary.computeLuminance() > 0.5
                     ? Colors.black
                     : Colors.white,
             text: 'Color:secondary',
@@ -100,34 +106,41 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             color: Theme.of(context).colorScheme.onSecondary,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.white
-                    : Colors.black,
+                Theme.of(context).colorScheme.onSecondary.computeLuminance() >
+                        0.5
+                    ? Colors.black
+                    : Colors.white,
             text: 'Color:onSecondary',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.secondaryContainer,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .secondaryContainer
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:secondaryContainer',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.onSecondaryContainer,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .onSecondaryContainer
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:onSecondaryContainer',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.tertiary,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
+                Theme.of(context).colorScheme.tertiary.computeLuminance() > 0.5
                     ? Colors.black
                     : Colors.white,
             text: 'Color:tertiary',
@@ -136,34 +149,41 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             color: Theme.of(context).colorScheme.onTertiary,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.white
-                    : Colors.black,
+                Theme.of(context).colorScheme.onTertiary.computeLuminance() >
+                        0.5
+                    ? Colors.black
+                    : Colors.white,
             text: 'Color:onTertiary',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.tertiaryContainer,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .tertiaryContainer
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:tertiaryContainer',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.onTertiaryContainer,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .onTertiaryContainer
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:onTertiaryContainer',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.error,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
+                Theme.of(context).colorScheme.error.computeLuminance() > 0.5
                     ? Colors.black
                     : Colors.white,
             text: 'Color:error',
@@ -172,43 +192,51 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             color: Theme.of(context).colorScheme.onError,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.white
-                    : Colors.black,
+                Theme.of(context).colorScheme.onError.computeLuminance() > 0.5
+                    ? Colors.black
+                    : Colors.white,
             text: 'Color:onError',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.errorContainer,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .errorContainer
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:errorContainer',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.onErrorContainer,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .onErrorContainer
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:onErrorContainer',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.background,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.white
-                    : Colors.black,
+                Theme.of(context).colorScheme.background.computeLuminance() >
+                        0.5
+                    ? Colors.black
+                    : Colors.white,
             text: 'Color:background',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.onBackground,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
+                Theme.of(context).colorScheme.onBackground.computeLuminance() >
+                        0.5
                     ? Colors.black
                     : Colors.white,
             text: 'Color:onBackground',
@@ -217,16 +245,16 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             color: Theme.of(context).colorScheme.surface,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.white
-                    : Colors.black,
+                Theme.of(context).colorScheme.surface.computeLuminance() > 0.5
+                    ? Colors.black
+                    : Colors.white,
             text: 'Color:surface',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.onSurface,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
+                Theme.of(context).colorScheme.onSurface.computeLuminance() > 0.5
                     ? Colors.black
                     : Colors.white,
             text: 'Color:onSurface',
@@ -234,26 +262,32 @@ class _MyHomePageState extends State<MyHomePage> {
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.surfaceVariant,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .surfaceVariant
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:surfaceVariant',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.onSurfaceVariant,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .onSurfaceVariant
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:onSurfaceVariant',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.outline,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
+                Theme.of(context).colorScheme.outline.computeLuminance() > 0.5
                     ? Colors.black
                     : Colors.white,
             text: 'Color:outline',
@@ -261,17 +295,20 @@ class _MyHomePageState extends State<MyHomePage> {
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.outlineVariant,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .outlineVariant
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:outlineVariant',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.shadow,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
+                Theme.of(context).colorScheme.shadow.computeLuminance() > 0.5
                     ? Colors.black
                     : Colors.white,
             text: 'Color:shadow',
@@ -280,7 +317,7 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             color: Theme.of(context).colorScheme.scrim,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
+                Theme.of(context).colorScheme.scrim.computeLuminance() > 0.5
                     ? Colors.black
                     : Colors.white,
             text: 'Color:scrim',
@@ -288,35 +325,45 @@ class _MyHomePageState extends State<MyHomePage> {
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.inverseSurface,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .inverseSurface
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:inverseSurface',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.onInverseSurface,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .onInverseSurface
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:onInverseSurface',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.inversePrimary,
-            textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+            textColor: Theme.of(context)
+                        .colorScheme
+                        .inversePrimary
+                        .computeLuminance() >
+                    0.5
+                ? Colors.black
+                : Colors.white,
             text: 'Color:inversePrimary',
           ),
           _buildRoundedRectangle(
             context: context,
             color: Theme.of(context).colorScheme.surfaceTint,
             textColor:
-                MediaQuery.of(context).platformBrightness == Brightness.dark
+                Theme.of(context).colorScheme.surfaceTint.computeLuminance() >
+                        0.5
                     ? Colors.black
                     : Colors.white,
             text: 'Color:surfaceTint',
