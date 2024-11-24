@@ -3,11 +3,11 @@ import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  runApp(const MyApp(brandColorp: Color(0xff6750a4)));
+  runApp(const MyApp(brandColorp: Colors.blue));
 }
 
 class MyApp extends StatelessWidget {
-  final Color brandColorp;
+  final MaterialColor brandColorp;
 
   const MyApp({super.key, required this.brandColorp});
 
@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // 定义应用的主题颜色方案
     final ColorScheme defaultLightColorScheme =
-        ColorScheme.fromSeed(seedColor: brandColorp);
+        ColorScheme.fromSwatch(primarySwatch: brandColorp);
 
-    final ColorScheme defaultDarkColorScheme = ColorScheme.fromSeed(
-        seedColor: brandColorp, brightness: Brightness.dark);
+    final ColorScheme defaultDarkColorScheme = ColorScheme.fromSwatch(
+        primarySwatch: brandColorp, brightness: Brightness.dark);
 
     // 使用 DynamicColorBuilder 来动态获取颜色方案
     return DynamicColorBuilder(
@@ -227,10 +227,28 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 final snackBar = SnackBar(
                   behavior: SnackBarBehavior.floating,
+                  width: 400.0,
                   content: Text(colorHexValue),
                   action: SnackBarAction(
                     label: 'Copy',
                     onPressed: () {
+                      // Clipboard.setData(ClipboardData(text: color.toString()))
+                      //     .then(
+                      //         (_) => ScaffoldMessenger.of(context).showSnackBar(
+                      //               const SnackBar(
+                      //                   behavior: SnackBarBehavior.floating,
+                      //                   width: 400.0,
+                      //                   content:
+                      //                       Text('Color copied to clipboard!')),
+                      //             ))
+                      //     .catchError((error) {
+                      //   ScaffoldMessenger.of(context).showSnackBar(
+                      //     const SnackBar(
+                      //         behavior: SnackBarBehavior.floating,
+                      //         width: 400.0,
+                      //         content: Text('Failed to copy color.')),
+                      //   );
+                      // });
                       Object? error;
                       try {
                         Clipboard.setData(ClipboardData(text: colorHexValue));
@@ -239,6 +257,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                               behavior: SnackBarBehavior.floating,
+                              width: 400.0,
                               content: Text('Failed to copy color.')),
                         );
                       } finally {
@@ -246,6 +265,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                                 behavior: SnackBarBehavior.floating,
+                                width: 400.0,
                                 content: Text('Color copied to clipboard!')),
                           );
                         }
